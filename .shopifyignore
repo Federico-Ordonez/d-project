@@ -1,0 +1,16 @@
+assets/.vite/*
+assets/swatches.css
+node_modules/
+src/
+.git/
+.vscode/
+*.md
+package.json
+package-lock.json
+yarn.lock
+vite.config.js
+tailwind.config.js
+postcss.config.js
+.eslintrc.*
+.prettierrc.*
+.gitignore

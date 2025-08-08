@@ -1,0 +1,33 @@
+{
+  "name": "shopify-theme-vite",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:watch": "vite build --watch",
+    "shopify:serve": "shopify theme serve --store=your-store.myshopify.com",
+    "lint": "eslint . --ext js,ts --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext js,ts --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@by-association-only/vite-plugin-shopify-clean": "^2.2.0",
+    "@eslint/js": "^9.15.0",
+    "@types/node": "^22.10.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.11.0",
+    "postcss": "^8.4.49",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.16",
+    "vite": "^7.1.0",
+    "vite-plugin-shopify": "^4.0.2"
+  },
+  "packageManager": "yarn@4.5.3"
+}
