@@ -11,10 +11,20 @@
   "sections": {
     "hero": {
       "type": "hero",
-      "settings": {}
+      "settings": {
+        "preheading": "Luxury homecare gifts",
+        "heading": "SCENT WITH INTENTION",
+        "description": "Whether you're thanking clients, welcoming new hires, or celebrating milestones, our curated gift sets offer a refined blend of beauty, fragrance, and function—crafted to elevate every space they touch.",
+        "button_text": "INQUIRE NOW",
+        "button_url": "",
+        "button_text_secondary": "LEARN MORE",
+        "button_url_secondary": "",
+        "hero_image": "shopify://shop_images/hero_image.jpg"
+      }
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     }
   },
