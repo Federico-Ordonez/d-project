@@ -10,6 +10,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        'roboto-condensed': ['Roboto Condensed', 'sans-serif'],
+        roseritta: ['Roseritta', 'serif'],
       },
       colors: {
         primary: {

@@ -1,0 +1,12 @@
+{
+  "name": "DOE Page",
+  "sections": {
+    "hero": {
+      "type": "hero"
+    },
+    "main": {
+      "type": "main-page"
+    }
+  },
+  "order": ["hero", "main"]
+}

@@ -1,0 +1,120 @@
+<section class='flex items-center w-full'>
+  <div class='w-full'>
+    <div class='flex flex-col-reverse lg:flex-row lg:items-center gap-5 lg:gap-16 xl:gap-[100px]'>
+      <div class='w-full lg:w-[44%] max-lg:px-5 py-5 lg:pl-[60px] lex flex-col justify-center'>
+        {% comment %} Preheading {% endcomment %}
+        {% if section.settings.preheading != blank %}
+          <p class='font-roboto-condensed font-normal text-base leading-[21px] uppercase text-black opacity-75 mb-5'>
+            {{ section.settings.preheading }}
+          </p>
+        {% endif %}
+
+        {% comment %} Heading {% endcomment %}
+        {% if section.settings.heading != blank %}
+          <h1 class='font-roseritta font-bold text-5xl/[0.94] tracking-[0.03em] text-[#191919] mb-3 md:text-[70px] md:leading-[66px] '>
+            {{ section.settings.heading }}
+          </h1>
+        {% endif %}
+
+        {% comment %} Description {% endcomment %}
+        {% if section.settings.description != blank %}
+          <p class='font-roboto-condensed font-normal text-base leading-[21px] tracking-[0.03em] text-[#555555] mb-10'>
+            {{ section.settings.description }}
+          </p>
+        {% endif %}
+
+        {% comment %}Buttons {% endcomment %}
+        {%- if section.settings.button_text != blank
+          or section.settings.button_text_secondary != blank
+        -%}
+          <div class='flex flex-col gap-4 sm:flex-row'>
+            {% if section.settings.button_text != blank %}
+              <a
+                href='{{ section.settings.button_url | default: '#' }}'
+                class='font-roboto-condensed font-normal text-lg leading-[21px] text-center text-white bg-[#191919] px-6 py-[14px] min-w-[192px] hover:bg-opacity-90 transition-all duration-200'
+              >
+                {{ section.settings.button_text }}
+              </a>
+            {% endif %}
+
+            {% if section.settings.button_text_secondary != blank %}
+              <a
+                href='{{ section.settings.button_url_secondary | default: '#' }}'
+                class='font-roboto-condensed font-normal text-lg leading-[21px] px-6 py-[14px] min-w-[192px] text-center text-[#191919] bg-transparent border border-[#191919] hover:bg-[#191919] hover:text-white'
+              >
+                {{ section.settings.button_text_secondary }}
+              </a>
+            {% endif %}
+          </div>
+        {%- endif -%}
+      </div>
+      <div class='w-full lg:w-[56%]'>
+        {% if section.settings.hero_image != blank %}
+          <div class='w-full'>
+            {{ section.settings.hero_image | image_url: width: 1632 | image_tag }}
+          </div>
+        {% else %}
+            {{ 'hero-apparel-2' | placeholder_svg_tag: 'w-full h-full object-cover' }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "preheading",
+      "label": "Preheading",
+      "default": "Luxury homecare gifts"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "SCENT WITH INTENTION"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Whether you're thanking clients, welcoming new hires, or celebrating milestones, our curated gift sets offer a refined blend of beauty, fragrance, and function—crafted to elevate every space they touch."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Primary Button Text",
+      "default": "INQUIRE NOW"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Primary Button URL"
+    },
+    {
+      "type": "text",
+      "id": "button_text_secondary",
+      "label": "Secondary Button Text",
+      "default": "LEARN MORE"
+    },
+    {
+      "type": "url",
+      "id": "button_url_secondary",
+      "label": "Secondary Button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section"
+    }
+  ]
+}
+{% endschema %}

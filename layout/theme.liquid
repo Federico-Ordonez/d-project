@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page_title }}{% unless page_title contains shop.name %} - {{ shop.name }}{% endunless %}</title>
-  
   {% if page_description %}
     <meta name="description" content="{{ page_description | escape }}">
   {% endif %}
-  
+
   <link rel="canonical" href="{{ canonical_url }}">
-  
+
   {{ content_for_header }}
-  
-  {% render 'vite-tag' with 'style.css' %}
+  {{ 'style.css' | asset_url | stylesheet_tag }}
+
 </head>
 
-<body>
+<body class="antialiased">
+  {%- sections 'header-group' -%}
   <main>
     {{ content_for_layout }}
   </main>
