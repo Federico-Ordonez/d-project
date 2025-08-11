@@ -18,7 +18,7 @@
 
         {% comment %} Description {% endcomment %}
         {% if section.settings.description != blank %}
-          <p class='font-roboto-condensed font-normal text-base leading-[21px] tracking-[0.03em] text-[#555555] mb-10'>
+          <p class='font-roboto-condensed font-normal text-base leading-[21px] tracking-[0.03em] text-[#555555]'>
             {{ section.settings.description }}
           </p>
         {% endif %}
@@ -27,7 +27,7 @@
         {%- if section.settings.button_text != blank
           or section.settings.button_text_secondary != blank
         -%}
-          <div class='flex flex-col gap-4 sm:flex-row'>
+          <div class='flex flex-col gap-4 mt-10 sm:flex-row'>
             {% if section.settings.button_text != blank %}
               <a
                 href='{{ section.settings.button_url | default: '#' }}'
@@ -50,9 +50,7 @@
       </div>
       <div class='w-full lg:w-[56%]'>
         {% if section.settings.hero_image != blank %}
-          <div class='w-full'>
             {{ section.settings.hero_image | image_url: width: 1632 | image_tag }}
-          </div>
         {% else %}
             {{ 'hero-apparel-2' | placeholder_svg_tag: 'w-full h-full object-cover' }}
         {% endif %}
